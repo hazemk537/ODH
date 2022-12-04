@@ -1,5 +1,5 @@
 /* global api */
-class enen_Collins {
+class enar_wordref {
     constructor(options) {
         this.options = options;
         this.maxexample = 2;
@@ -10,7 +10,7 @@ class enen_Collins {
         let locale = await api.locale();
         if (locale.indexOf('CN') != -1) return '柯林斯英英词典';
         if (locale.indexOf('TW') != -1) return '柯林斯英英词典';
-        return 'Collins English Dictionary';
+        return 'enar_wordref';
     }
 
 
@@ -37,7 +37,7 @@ class enen_Collins {
                 return node.innerText.trim();
         }
 
-        let base = 'https://www.collinsdictionary.com/dictionary/english/';
+        let base = 'https://www.wordreference.com/enar/';
         let url = base + encodeURIComponent(word);
         let doc = '';
         try {
