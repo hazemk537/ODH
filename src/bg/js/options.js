@@ -35,6 +35,7 @@ async function populateAnkiFields(options) {
 async function updateAnkiStatus(options) {
     $('#services-status').text(chrome.i18n.getMessage('msgConnecting'));
     $('#anki-options').hide();
+    options.services == 'ankiweb'
     if (options.services == 'ankiweb')
         $('#user-options').show();
     else {
